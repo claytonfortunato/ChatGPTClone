@@ -9,7 +9,7 @@ const ImageGenerate = () => {
   const [result, setResult] = useState<string>("");
 
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: import.meta.env.REACT_APP_KEY,
   });
 
   const openai = new OpenAIApi(configuration);
