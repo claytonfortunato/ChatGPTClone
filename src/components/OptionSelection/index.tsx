@@ -1,6 +1,6 @@
 import * as C from "./styles";
 
-export default function OptionSelection({ arrayItems }) {
+export default function OptionSelection({ arrayItems, selectOption }) {
   return (
     <C.Container>
       <h1>ChatGPT Clone</h1>
@@ -8,7 +8,7 @@ export default function OptionSelection({ arrayItems }) {
       <C.Grid>
         {arrayItems.map((item) => {
           return (
-            <C.Child>
+            <C.Child onClick={selectOption}>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
             </C.Child>

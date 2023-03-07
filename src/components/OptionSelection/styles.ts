@@ -8,7 +8,9 @@ export const Container = styled.div`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  gap: 10px;
+  gap: 20px;
+
+  margin-top: 20px;
 
   h3 {
     font-weight: 700;
@@ -29,6 +31,6 @@ export const Child = styled.div`
 
   &:hover {
     background-color: #fff;
-    color: #212121;
+    color: #333;
   }
 `;
