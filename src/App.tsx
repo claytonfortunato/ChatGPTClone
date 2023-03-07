@@ -4,9 +4,13 @@ import { Configuration, OpenAIApi } from "openai";
 
 import * as C from "./styles";
 
+type generateOption = {
+  data: string;
+};
+
 const App = () => {
   const [prompt, setPrompt] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState<string>("");
 
   const configuration = new Configuration({
     apiKey: import.meta.env.REACT_APP_KEY,
