@@ -6,10 +6,11 @@ import * as C from "./styles";
 
 type generateOption = {
   data: string;
+  res: string;
 };
 
-const App = () => {
-  const [prompt, setPrompt] = useState("");
+const App = (): JSX.Element => {
+  const [prompt, setPrompt] = useState<string>("");
   const [result, setResult] = useState<string>("");
 
   const configuration = new Configuration({
@@ -38,7 +39,11 @@ const App = () => {
       />
       <C.Button onClick={generateImage}>Gerar uma Imagem</C.Button>
 
-      {result.length > 0 ? <img src={result} alt="result" /> : <></>}
+      {result.length > 0 ? (
+        <img className="result-image" src={result} alt="result" />
+      ) : (
+        <></>
+      )}
     </C.Container>
   );
 };

@@ -8,9 +8,17 @@ export const Container = styled.div`
   align-items: center;
 
   input {
-    width: 200px;
-    height: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    outline: none;
     margin: 20px;
+  }
+
+  .result-image {
+    margin-top: 20px;
+    width: 350px;
   }
 `;
 
