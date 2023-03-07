@@ -5,7 +5,7 @@ const App = (): JSX.Element => {
   console.log(arrayItems);
   return (
     <div>
-      <OptionSelection />
+      <OptionSelection arrayItems={arrayItems} />
     </div>
   );
 };
