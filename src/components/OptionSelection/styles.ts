@@ -24,7 +24,7 @@ export const Grid = styled.div`
 
 export const Child = styled.div`
   border: 1px solid #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s all ease-in-out;

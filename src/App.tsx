@@ -9,19 +9,22 @@ import * as C from "./styles";
 
 const App = (): JSX.Element => {
   const [option, setOption] = useState({});
+  const [input, setInput] = useState<string>("");
   // console.log(import.meta.env.REACT_APP_KEY)
 
   const selectOption = (option) => {
-    setOption(option);
+    setOption({ ...option, prompt: input });
   };
 
-  console.log(Object.values(option).length);
+  const doStuff = () => {};
+
+  console.log(option);
   return (
     <C.Container>
       {Object.values(option).length === 0 ? (
         <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        <Translation />
+        <Translation doStuff={doStuff} setInput={setInput} />
       )}
     </C.Container>
   );
