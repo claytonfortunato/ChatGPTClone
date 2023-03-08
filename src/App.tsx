@@ -13,10 +13,12 @@ const App = (): JSX.Element => {
   // console.log(import.meta.env.REACT_APP_KEY)
 
   const selectOption = (option) => {
-    setOption({ ...option, prompt: input });
+    setOption(option);
   };
 
-  const doStuff = () => {};
+  const doStuff = () => {
+    setOption({ ...option, prompt: input });
+  };
 
   console.log(option);
   return (
