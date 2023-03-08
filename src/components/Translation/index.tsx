@@ -1,6 +1,13 @@
 import * as C from "./styles";
 
-const Translation = ({ doStuff, handleInput, result }): JSX.Element => {
+type Props = {
+  result: string;
+  doStuff: () => void;
+  handleInput: () => void;
+  promp: string;
+};
+
+const Translation = ({ doStuff, handleInput, result }: Props): JSX.Element => {
   return (
     <C.Container>
       <textarea

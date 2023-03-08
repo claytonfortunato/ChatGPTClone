@@ -1,6 +1,14 @@
 import * as C from "./styles";
 
-export default function OptionSelection({ arrayItems, selectOption }) {
+type componentProps = {
+  arrayItems: string;
+  selectOption: string;
+};
+
+export default function OptionSelection({
+  arrayItems,
+  selectOption,
+}: componentProps) {
   return (
     <C.Container>
       <h1>ChatGPT Clone</h1>

@@ -11,13 +11,7 @@ import { chatType } from "./types";
 
 import * as C from "./styles";
 
-type Props = {
-  result: string;
-  doStuff: () => void;
-  handleInput: () => void;
-};
-
-const App = ({}: Props): JSX.Element => {
+const App = (): JSX.Element => {
   const [option, setOption] = useState({});
   const [result, setResult] = useState("");
   const [input, setInput] = useState("");
