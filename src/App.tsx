@@ -1,32 +1,59 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+
+import { Configuration, OpenAIApi } from "openai";
 
 import OptionSelection from "./components/OptionSelection";
 import Translation from "./components/Translation";
 
 import { arrayItems } from "./AlOptions";
 
+import { chatType } from "./types";
+
 import * as C from "./styles";
 
-const App = (): JSX.Element => {
+type Props = {
+  result: string;
+  doStuff: () => void;
+  handleInput: () => void;
+};
+
+const App = ({}: Props): JSX.Element => {
   const [option, setOption] = useState({});
-  const [input, setInput] = useState<string>("");
+  const [result, setResult] = useState<chatType | null>(null);
+  const [input, setInput] = useState("");
   // console.log(import.meta.env.REACT_APP_KEY)
+  const configuration = new Configuration({
+    apiKey: "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",
+  });
+
+  const openai = new OpenAIApi(configuration);
 
   const selectOption = (option) => {
     setOption(option);
   };
 
-  const doStuff = () => {
-    setOption({ ...option, prompt: input });
+  const doStuff = async () => {
+    let object = { ...option, prompt: input };
+
+    const response = await openai.createCompletion(object);
+
+    setResult(response.data.choices[0].text);
   };
 
-  console.log(option);
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
   return (
     <C.Container>
       {Object.values(option).length === 0 ? (
         <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        <Translation doStuff={doStuff} setInput={setInput} />
+        <Translation
+          doStuff={doStuff}
+          handleInput={handleInput}
+          result={result}
+        />
       )}
     </C.Container>
   );

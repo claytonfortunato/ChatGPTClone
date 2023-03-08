@@ -6,6 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+
+  h3 {
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
 `;
 
 export const Button = styled.button`
