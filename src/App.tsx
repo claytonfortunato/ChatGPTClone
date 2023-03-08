@@ -19,11 +19,11 @@ type Props = {
 
 const App = ({}: Props): JSX.Element => {
   const [option, setOption] = useState({});
-  const [result, setResult] = useState<chatType | null>(null);
+  const [result, setResult] = useState("");
   const [input, setInput] = useState("");
   // console.log(import.meta.env.REACT_APP_KEY)
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: import.meta.env.REACT_APP_KEY,
   });
 
   const openai = new OpenAIApi(configuration);
