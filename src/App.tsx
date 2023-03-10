@@ -13,7 +13,7 @@ import * as C from "./styles";
 
 const App = (): JSX.Element => {
   const [option, setOption] = useState({});
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState<string | undefined>("");
   const [input, setInput] = useState("");
   // console.log(import.meta.env.REACT_APP_KEY)
   const configuration = new Configuration({
@@ -22,7 +22,7 @@ const App = (): JSX.Element => {
 
   const openai = new OpenAIApi(configuration);
 
-  const selectOption = (option) => {
+  const selectOption = (option: string) => {
     setOption(option);
   };
 

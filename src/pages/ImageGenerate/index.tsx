@@ -6,7 +6,7 @@ import * as C from "./styles";
 
 const ImageGenerate = () => {
   const [prompt, setPrompt] = useState<string>("");
-  const [result, setResult] = useState<string>("");
+  const [result, setResult] = useState<string | undefined>("");
 
   const configuration = new Configuration({
     apiKey: import.meta.env.REACT_APP_KEY,
